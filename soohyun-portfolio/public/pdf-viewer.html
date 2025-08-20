@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF Viewer</title>
+  <style>html,body,iframe{height:100%;width:100%;margin:0;border:0}</style>
+</head>
+<body>
+  <iframe id="frame" title="pdf"></iframe>
+  <script>
+    const qs = new URLSearchParams(location.search);
+    const file = qs.get("file") || "";
+    document.getElementById("frame").src = decodeURIComponent(file) + "#toolbar=0&navpanes=0";
+  </script>
+</body>
+</html>

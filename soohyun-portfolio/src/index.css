@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 폰트 */
+:root { --header-h: 64px; }
+html, body { scroll-behavior: auto; }
+body {
+  @apply bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+  font-family: Pretendard, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Apple SD Gothic Neo", Arial, sans-serif;
+}
+
+/* 유리감(캔버스와 동일 느낌) */
+.glass-outline {
+  @apply absolute -inset-3 md:-inset-4 rounded-[24px] backdrop-blur-2xl ring-1;
+  background: rgba(255,255,255,.28);
+  --tw-ring-color: rgba(0,0,0,.1);
+}
+.dark .glass-outline {
+  background: rgba(30,41,59,.25);
+  --tw-ring-color: rgba(255,255,255,.1);
+}
+.glass-inner {
+  @apply relative rounded-[20px] border p-5;
+  background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.18));
+  border-color: rgba(255,255,255,.3);
+}
+.dark .glass-inner { border-color: rgba(255,255,255,.1); }
